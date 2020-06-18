@@ -30,7 +30,7 @@
 
     <groupId>org.apache.servicemix.bundles</groupId>
     <artifactId>org.apache.servicemix.bundles.elasticsearch-client</artifactId>
-    <version>7.6.2_2-SNAPSHOT</version>
+    <version>7.6.2_2-COB-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>Apache ServiceMix :: Bundles :: elasticsearch-client</name>
     <description>This OSGi bundle wraps elasticsearch-client ${pkgVersion} jar files.</description>
@@ -45,15 +45,55 @@
     <properties>
         <pkgGroupId>org.elasticsearch.client</pkgGroupId>
         <pkgVersion>7.6.2</pkgVersion>
+        <luceneVersion>8.4.0</luceneVersion>
         <servicemix.osgi.export>
-            org.elasticsearch.client;version="${pkgVersion}";-split-package:=merge-first,
-            org.elasticsearch.client.sniff;version="${pkgVersion}";-split-package:=merge-first,
-            org.elasticsearch.transport.client;version="${pkgVersion}";-split-package:=merge-first,
-            org.elasticsearch.client.transport;version="${pkgVersion}";-split-package:=merge-first,
-            org.elasticsearch.client.support;version="${pkgVersion}";-split-package:=merge-first,
-            org.elasticsearch.client.node;version="${pkgVersion}";-split-package:=merge-first
+            org.elasticsearch;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.action.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.client.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.cluster;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.cluster.ack;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.cluster.action.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.cluster.block;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.cluster.coordination;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.cluster.metadata;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.cluster.health;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.cluster.routing;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.common.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.core.internal.io;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.discovery;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.env;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.gateway;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.http;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.index.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.indices;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.indices.recovery;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.ingest;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.node;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.repositories.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.transport.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.rest.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.script.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.search.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.snapshots;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.plugins.spi;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.tasks.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.elasticsearch.transport.*;version="${pkgVersion}";-split-package:=merge-first,
+            org.apache.lucene.analysis.*;version="${luceneVersion}";-split-package:=merge-first,
+            org.apache.lucene.index;version="${luceneVersion}";-split-package:=merge-first,
+            org.apache.lucene.queryparser.*;version="${luceneVersion}";-split-package:=merge-first,
+            org.apache.lucene.search.*;version="${luceneVersion}";-split-package:=merge-first,
+            org.apache.lucene.store;version="${luceneVersion}";-split-package:=merge-first,
+            org.apache.lucene.util;version="${luceneVersion}";-split-package:=merge-first,
+
         </servicemix.osgi.export>
         <servicemix.osgi.import.pkg>
+            org.apache.http.*;-split-package:=merge-first,
+            javax.net.ssl;-split-package:=merge-first,
+            org.apache.commons.logging;-split-package:=merge-first,
+            org.apache.logging.log4j;-split-package:=merge-first,
+            org.apache.logging.log4j.message;-split-package:=merge-first,
+            com.carrotsearch.hppc;-split-package:=merge-first,
+            com.fasterxml.jackson.*;-split-package:=merge-first
 
         </servicemix.osgi.import.pkg>
     </properties>
