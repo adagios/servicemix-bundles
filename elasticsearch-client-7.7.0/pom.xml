@@ -79,6 +79,7 @@
             org.elasticsearch.tasks.*;version="${pkgVersion}";-split-package:=merge-first,
             org.elasticsearch.transport.*;version="${pkgVersion}";-split-package:=merge-first,
             org.apache.lucene.analysis.*;version="${luceneVersion}";-split-package:=merge-first,
+            org.apache.lucene.document.*;version="${luceneVersion}";-split-package:=merge-first,
             org.apache.lucene.index;version="${luceneVersion}";-split-package:=merge-first,
             org.apache.lucene.queryparser.*;version="${luceneVersion}";-split-package:=merge-first,
             org.apache.lucene.search.*;version="${luceneVersion}";-split-package:=merge-first,
